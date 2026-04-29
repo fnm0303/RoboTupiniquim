@@ -1,7 +1,7 @@
 ﻿//PROJETO ROBÔ TUPINIQUIM
 
 //1. Inicializar posições iniciais e orientação
-Console.Clear();
+//Console.Clear();
 Console.Write("Digite a posição inicial do robô no eixo X: ");
 int posicaoInicialEixoX = Convert.ToInt32(Console.ReadLine());
 
