@@ -1,11 +1,13 @@
 ﻿//PROJETO ROBÔ TUPINIQUIM
+namespace RoboTupiniquim.ConsoleApp;
 
+using RoboTupiniquim.ConsoleApp.Entidades;
 class Program
 {
     static void Main(string[] args)
     {
         //1. Inicializar posições iniciais e orientação
-        //Console.Clear();
+        Console.Clear();
         Console.Write("Digite a posição inicial do robô no eixo X: ");
         int posicaoInicialEixoX = Convert.ToInt32(Console.ReadLine());
 
@@ -34,83 +36,18 @@ class Program
         {
             //verificando direção se instrução D
             if (instrucoes[i] == 'D')
-                orientacao = ComandoADireita(instrucoes[i], orientacao);
+                orientacao = ComandoADireita.VirarADireita(instrucoes[i], orientacao);
 
             //verificando direção se instrução E
             else if (instrucoes[i] == 'E')
-                orientacao = ComandoAEsquerda(instrucoes[i], orientacao);
+                orientacao = ComandoAEsquerda.VirarAEsquerda(instrucoes[i], orientacao);
 
             //verificando movimento
             else if (instrucoes[i] == 'M')
-                ComandoMovimento(instrucoes[i], orientacao, ref posicaoInicialEixoX, ref posicaoInicialEixoY);
+                ComandoMovimento.Movimentar(instrucoes[i], orientacao, ref posicaoInicialEixoX, ref posicaoInicialEixoY);
         }
 
         Console.WriteLine($"\nPosição Final: {posicaoInicialEixoX} {posicaoInicialEixoY} {orientacao}");
         Console.ReadLine();
-    }
-
-    static string ComandoADireita(char instrucao, string orientacao)
-    {
-
-        if (instrucao == 'D' && orientacao == "N")
-        {
-            orientacao = "O";
-        }
-        else if (instrucao == 'D' && orientacao == "S")
-        {
-            orientacao = "L";
-        }
-        else if (instrucao == 'D' && orientacao == "O")
-        {
-            orientacao = "S";
-        }
-        else if (instrucao == 'D' && orientacao == "L")
-        {
-            orientacao = "N";
-        }
-
-        return orientacao;
-    }
-
-    static string ComandoAEsquerda(char instrucao, string orientacao)
-    {
-        if (instrucao == 'E' && orientacao == "N")
-        {
-            orientacao = "L";
-        }
-        else if (instrucao == 'E' && orientacao == "S")
-        {
-            orientacao = "O";
-        }
-        else if (instrucao == 'E' && orientacao == "O")
-        {
-            orientacao = "N";
-        }
-        else if (instrucao == 'E' && orientacao == "L")
-        {
-            orientacao = "S";
-        }
-        return orientacao;
-    }
-
-    static void ComandoMovimento(char instrucao, string orientacao, ref int posicaoInicialEixoX, ref int posicaoInicialEixoY)
-    {
-        if (instrucao == 'M' && orientacao == "N")
-        {
-            posicaoInicialEixoY = posicaoInicialEixoY + 1;
-        }
-        else if (instrucao == 'M' && orientacao == "S")
-        {
-            posicaoInicialEixoY = posicaoInicialEixoY - 1;
-        }
-        else if (instrucao == 'M' && orientacao == "O")
-        {
-            posicaoInicialEixoX = posicaoInicialEixoX + 1;
-        }
-        else if (instrucao == 'M' && orientacao == "L")
-        {
-            posicaoInicialEixoX = posicaoInicialEixoX - 1;
-        }
-
     }
 }
