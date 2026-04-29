@@ -34,15 +34,15 @@ class Program
         {
             //verificando direção se instrução D
             if (instrucoes[i] == 'D')
-                ComandoADireita(instrucoes[i], orientacao);
+                orientacao = ComandoADireita(instrucoes[i], orientacao);
 
             //verificando direção se instrução E
             else if (instrucoes[i] == 'E')
-                ComandoAEsquerda(instrucoes[i], orientacao);
+                orientacao = ComandoAEsquerda(instrucoes[i], orientacao);
 
             //verificando movimento
-            else
-                ComandoMovimento(instrucoes[i], orientacao, posicaoInicialEixoX, posicaoInicialEixoY);
+            else if (instrucoes[i] == 'M')
+                ComandoMovimento(instrucoes[i], orientacao, ref posicaoInicialEixoX, ref posicaoInicialEixoY);
         }
 
         Console.WriteLine($"\nPosição Final: {posicaoInicialEixoX} {posicaoInicialEixoY} {orientacao}");
@@ -93,27 +93,24 @@ class Program
         return orientacao;
     }
 
-    static int ComandoMovimento(char instrucao, string orientacao, int posicaoInicialEixoX, int posicaoInicialEixoY)
+    static void ComandoMovimento(char instrucao, string orientacao, ref int posicaoInicialEixoX, ref int posicaoInicialEixoY)
     {
         if (instrucao == 'M' && orientacao == "N")
         {
             posicaoInicialEixoY = posicaoInicialEixoY + 1;
-            return posicaoInicialEixoY;
         }
         else if (instrucao == 'M' && orientacao == "S")
         {
             posicaoInicialEixoY = posicaoInicialEixoY - 1;
-            return posicaoInicialEixoY;
         }
         else if (instrucao == 'M' && orientacao == "O")
         {
             posicaoInicialEixoX = posicaoInicialEixoX + 1;
-            return posicaoInicialEixoX;
         }
         else if (instrucao == 'M' && orientacao == "L")
         {
             posicaoInicialEixoX = posicaoInicialEixoX - 1;
-            return posicaoInicialEixoX;
         }
+
     }
 }
