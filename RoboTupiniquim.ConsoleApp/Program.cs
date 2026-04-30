@@ -73,11 +73,11 @@ for (int i = 0; i < instrucoes.Length; i++)
     {
         posicaoInicialEixoY = posicaoInicialEixoY - 1;
     }
-    else if (instrucoes[i] == 'M' && orientacao == "O")
+    else if (instrucoes[i] == 'M' && orientacao == "L")
     {
         posicaoInicialEixoX = posicaoInicialEixoX + 1;
     }
-    else if (instrucoes[i] == 'M' && orientacao == "L")
+    else if (instrucoes[i] == 'M' && orientacao == "O")
     {
         posicaoInicialEixoX = posicaoInicialEixoX - 1;
     }
