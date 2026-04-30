@@ -8,19 +8,19 @@ public class ComandoAEsquerda
     {
         if (instrucao == 'E' && orientacao == "N")
         {
-            orientacao = "L";
+            orientacao = "O";
         }
         else if (instrucao == 'E' && orientacao == "S")
         {
-            orientacao = "O";
+            orientacao = "L";
         }
         else if (instrucao == 'E' && orientacao == "O")
         {
-            orientacao = "N";
+            orientacao = "S";
         }
         else if (instrucao == 'E' && orientacao == "L")
         {
-            orientacao = "S";
+            orientacao = "N";
         }
         return orientacao;
     }
