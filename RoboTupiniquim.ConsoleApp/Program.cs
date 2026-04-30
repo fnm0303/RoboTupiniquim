@@ -54,19 +54,19 @@ class Program
 
         if (instrucao == 'D' && orientacao == "N")
         {
-            orientacao = "O";
+            orientacao = "L";
         }
         else if (instrucao == 'D' && orientacao == "S")
         {
-            orientacao = "L";
+            orientacao = "O";
         }
         else if (instrucao == 'D' && orientacao == "O")
         {
-            orientacao = "S";
+            orientacao = "N";
         }
         else if (instrucao == 'D' && orientacao == "L")
         {
-            orientacao = "N";
+            orientacao = "S";
         }
 
         return orientacao;
@@ -76,19 +76,19 @@ class Program
     {
         if (instrucao == 'E' && orientacao == "N")
         {
-            orientacao = "L";
+            orientacao = "O";
         }
         else if (instrucao == 'E' && orientacao == "S")
         {
-            orientacao = "O";
+            orientacao = "L";
         }
         else if (instrucao == 'E' && orientacao == "O")
         {
-            orientacao = "N";
+            orientacao = "S";
         }
         else if (instrucao == 'E' && orientacao == "L")
         {
-            orientacao = "S";
+            orientacao = "N";
         }
         return orientacao;
     }
