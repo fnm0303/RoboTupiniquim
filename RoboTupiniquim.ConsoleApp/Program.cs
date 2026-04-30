@@ -103,11 +103,11 @@ class Program
         {
             posicaoInicialEixoY = posicaoInicialEixoY - 1;
         }
-        else if (instrucao == 'M' && orientacao == "O")
+        else if (instrucao == 'M' && orientacao == "L")
         {
             posicaoInicialEixoX = posicaoInicialEixoX + 1;
         }
-        else if (instrucao == 'M' && orientacao == "L")
+        else if (instrucao == 'M' && orientacao == "O")
         {
             posicaoInicialEixoX = posicaoInicialEixoX - 1;
         }
