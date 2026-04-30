@@ -31,37 +31,37 @@ for (int i = 0; i < instrucoes.Length; i++)
     //verificando direção se instrução D
     if (instrucoes[i] == 'D' && orientacao == "N")
     {
-        orientacao = "O";
+        orientacao = "L";
     }
     else if (instrucoes[i] == 'D' && orientacao == "S")
     {
-        orientacao = "L";
+        orientacao = "O";
     }
     else if (instrucoes[i] == 'D' && orientacao == "O")
     {
-        orientacao = "S";
+        orientacao = "N";
     }
     else if (instrucoes[i] == 'D' && orientacao == "L")
     {
-        orientacao = "N";
+        orientacao = "S";
     }
 
     //verificando direção se instrução E
     if (instrucoes[i] == 'E' && orientacao == "N")
     {
-        orientacao = "L";
+        orientacao = "O";
     }
     else if (instrucoes[i] == 'E' && orientacao == "S")
     {
-        orientacao = "O";
+        orientacao = "L";
     }
     else if (instrucoes[i] == 'E' && orientacao == "O")
     {
-        orientacao = "N";
+        orientacao = "S";
     }
     else if (instrucoes[i] == 'E' && orientacao == "L")
     {
-        orientacao = "S";
+        orientacao = "N";
     }
 
     //verificando movimento
